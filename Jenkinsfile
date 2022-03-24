@@ -38,11 +38,11 @@ pipeline{
 
 			
 			 stage('Sonar Analysis'){
-			 	steps{
+         steps{
 			 		echo '------------>Analisis de código estático<------------'
-			 		  sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:javier.certificaciones.node-javier.aponte',
-           sonarName:'CeibaADN-Ceiba-CertificacionesNode-javier.aponte',
-           sonarPathProperties:'./sonar-project.properties')
+			 		  withSonarQubeEnv('Sonar') {
+                         sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dsonar.projectKey=co.com.ceiba.adn:javier.certificaciones.node-javier.aponte -Dsonar.projectName=CeibaADN-Ceiba-CertificacionesNode-javier.aponte -Dproject.settings=./sonar-project.properties"
+                      }
 			 	}
 			 }
 		
