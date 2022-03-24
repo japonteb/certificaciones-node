@@ -19,7 +19,7 @@ pipeline{
 			stage('Checkout') {
 				steps {
                 echo '------------>Checkout desde Git Microservicio<------------'
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Default' , submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub_boterojuanpa', url: 'https://github.com/boterojuanpa/node-jest-arquitectura-hexagonal']]])
+                checkout scm
 				}
 			}
 		
@@ -40,9 +40,9 @@ pipeline{
 			 stage('Sonar Analysis'){
 			 	steps{
 			 		echo '------------>Analisis de código estático<------------'
-			 		  withSonarQubeEnv('Sonar') {
-                         sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dsonar.projectKey=co.com.cliente:proyecto.nombre.apellido.master -Dsonar.projectName=co.com.cliente:proyecto.nombre.apellido.master -Dproject.settings=./sonar-project.properties"
-                      }
+			 		  sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:javier.certificaciones.node-javier.aponte',
+           sonarName:'CeibaADN-Ceiba-CertificacionesNode-javier.aponte',
+           sonarPathProperties:'./sonar-project.properties')
 			 	}
 			 }
 		
