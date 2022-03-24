@@ -26,13 +26,20 @@ export class RepositorioCertificacionMysql implements RepositorioCertificacion {
   }
 
   async existePorNombreYDetalle(
-    nombre: string,
-    detalle: string
+    _nombre: string,
+    _detalle: string
   ): Promise<boolean> {
-    return (await this.repositorio.count({ nombre, detalle })) > 0;
+    return (
+      (await this.repositorio.count({
+        where: {
+          nombre: _nombre,
+          detalle: _detalle,
+        },
+      })) > 0
+    );
   }
 
   async existePorId(id: number): Promise<boolean> {
-    return (await this.repositorio.count({ id })) > 0;
+    return (await this.repositorio.countBy({ id })) > 0;
   }
 }

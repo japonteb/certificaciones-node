@@ -12,14 +12,21 @@ export class RepositorioExamenMysql implements RepositorioExamen {
     private readonly repositorio: Repository<ExamenEntidad>
   ) {}
 
-  async existe(clienteId: number, certificacionId: number): Promise<boolean> {
-    return (await this.repositorio.count({ clienteId, certificacionId })) > 0;
+  async existe(_clienteId: number, _certificacionId: number): Promise<boolean> {
+    return (
+      (await this.repositorio.count({
+        where: {
+          clienteId: _clienteId,
+          certificacionId: _certificacionId,
+        },
+      })) > 0
+    );
   }
 
   async existeCertificacionEnExamenesPorCertificacionId(
     certificacionId: number
   ): Promise<boolean> {
-    return (await this.repositorio.count({ certificacionId })) > 0;
+    return (await this.repositorio.countBy({ certificacionId })) > 0;
   }
 
   async guardar(examen: Examen) {

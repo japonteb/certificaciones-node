@@ -14,7 +14,9 @@ export class ExamenTestDataBuilder {
     this.#id = 1;
     this.#cliente = new ClienteTestDataBuilder().build();
     this.#certificacion = new CertificacionTestDataBuilder().build();
-    this.#fechaPresentacion = new Date().toISOString();
+    this.#fechaPresentacion = new Date(
+      Date.now() + 3600 * 1000 * 24
+    ).toISOString();
   }
 
   public conId(id: number): ExamenTestDataBuilder {
