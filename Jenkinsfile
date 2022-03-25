@@ -26,12 +26,13 @@ pipeline{
 		
 			stage('compilar '){
                 steps {
-              echo "------------>compilar<------------"
+              sh 'npm i'
+              sh 'npm run build'
 				}
             }
             stage('test '){
                 steps {
-              echo "------------>test<------------"
+              sh 'npm run test:cov'
 				}
             }
 
