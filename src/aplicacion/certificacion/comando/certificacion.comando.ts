@@ -22,4 +22,18 @@ export class ComandoCertificacion {
   @Min(0, { message: 'El precio debe ser mayor a cero' })
   @ApiProperty({ example: 1000 })
   public precio: number;
+
+  constructor(
+    id: number,
+    nombre: string,
+    detalle: string,
+    duracion: number,
+    precio: number
+  ) {
+    this.id = id;
+    this.nombre = nombre;
+    this.detalle = detalle;
+    this.duracion = duracion;
+    this.precio = precio;
+  }
 }

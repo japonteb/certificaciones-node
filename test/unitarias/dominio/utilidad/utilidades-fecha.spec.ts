@@ -1,6 +1,4 @@
 import { UtilidadesFecha } from 'src/dominio/utilidad/utilidades-fecha';
-import { Usuario } from 'src/dominio/usuario/modelo/usuario';
-import { ErrorLongitudInvalida } from 'src/dominio/errores/error-longitud-invalida';
 
 describe('Utilidades Fecha', () => {
   it('Deberia devolver que no es festivo', () => {

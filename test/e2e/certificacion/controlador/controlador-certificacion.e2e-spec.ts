@@ -17,6 +17,7 @@ import { AppLogger } from 'src/infraestructura/configuracion/ceiba-logger.servic
 import { FiltroExcepcionesDeNegocio } from 'src/infraestructura/excepciones/filtro-excepciones-negocio';
 import * as request from 'supertest';
 import { createStubObj } from '../../../util/create-object.stub';
+import { CertificacionComandoTestDataBuilder } from '../builder/certificacion-comando-test-data-builder';
 
 /**
  * Un sandbox es util cuando el módulo de nest se configura una sola vez durante el ciclo completo de pruebas
@@ -110,13 +111,9 @@ describe('Pruebas al controlador de certificaciones', () => {
   });
 
   it('debería fallar al registar un certificacion con un nombre y detalle ya existente', async () => {
-    const certificacion: ComandoCertificacion = {
-      id: 1,
-      nombre: 'Java',
-      detalle: 'Java EE y Servicios Web',
-      duracion: 120,
-      precio: 1000,
-    };
+    // Arrange
+    const certificacion: ComandoCertificacion =
+      new CertificacionComandoTestDataBuilder().build();
     const mensaje = `La certificación con nombre ${certificacion.nombre} y detalle ${certificacion.detalle} ya existe en el sistema`;
     repositorioCertificacion.existePorNombreYDetalle.returns(
       Promise.resolve(true)
@@ -129,5 +126,23 @@ describe('Pruebas al controlador de certificaciones', () => {
       .expect(HttpStatus.FORBIDDEN);
     expect(response.body.message).toBe(mensaje);
     expect(response.body.status).toBe(HttpStatus.FORBIDDEN);
+  });
+
+  it('debería registar una certificacion con un nombre y detalle no existentes', async () => {
+    // Arrange
+    const certificacion: ComandoCertificacion =
+      new CertificacionComandoTestDataBuilder().build();
+
+    repositorioCertificacion.existePorNombreYDetalle.returns(
+      Promise.resolve(false)
+    );
+
+    // Act
+    const response = await request(app.getHttpServer())
+      .post('/certificaciones')
+      .send(certificacion);
+
+    // Assert
+    expect(response.statusCode).toBe(HttpStatus.CREATED);
   });
 });

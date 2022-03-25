@@ -13,4 +13,10 @@ export class ComandoCliente {
   @IsNumber()
   @ApiProperty({ example: 4 })
   public tipoCliente: number;
+
+  constructor(id: number, nombre: string, tipoCliente: number) {
+    this.id = id;
+    this.nombre = nombre;
+    this.tipoCliente = tipoCliente;
+  }
 }

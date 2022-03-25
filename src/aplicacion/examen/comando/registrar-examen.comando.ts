@@ -27,4 +27,18 @@ export class ComandoRegistrarExamen {
 
   @ApiProperty({ example: 1000 })
   public precioTotal: number;
+
+  constructor(
+    id: number,
+    comandoCliente: ComandoCliente,
+    comandoCertificacion: ComandoCertificacion,
+    fechaPresentacion: string,
+    precioTotal: number
+  ) {
+    this.id = id;
+    this.comandoCliente = comandoCliente;
+    this.comandoCertificacion = comandoCertificacion;
+    this.fechaPresentacion = fechaPresentacion;
+    this.precioTotal = precioTotal;
+  }
 }
