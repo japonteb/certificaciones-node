@@ -30,7 +30,9 @@ export class UtilidadesFecha {
   }
 
   public static esFinDeSemana(fecha: Date): boolean {
+    const SABADO = 6;
+    const DOMINGO = 0;
     const diaDeSemana: number = fecha.getDay();
-    return diaDeSemana === 6 || diaDeSemana === 0;
+    return diaDeSemana === SABADO || diaDeSemana === DOMINGO;
   }
 }

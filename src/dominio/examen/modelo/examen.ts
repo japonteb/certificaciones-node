@@ -72,14 +72,22 @@ export class Examen {
 
   private calcularPrecioTotal(): number {
     let precio: number = this.#certificacion.precio;
+
+    const PRECIO_EXAMEN_FESTIVO_ES_TRIPLE = 3;
+    const PRECIO_EXAMEN_FIN_DE_SEMANA_ES_DOBLE = 2;
+    const PORCENTAJE_PRECIO_TOTAL_EXAMEN = 100;
+
     if (UtilidadesFecha.esFestivo(this.#fechaPresentacion)) {
-      precio = precio * 3;
+      precio = precio * PRECIO_EXAMEN_FESTIVO_ES_TRIPLE;
     } else if (UtilidadesFecha.esFinDeSemana(this.#fechaPresentacion)) {
-      precio = precio * 2;
+      precio = precio * PRECIO_EXAMEN_FIN_DE_SEMANA_ES_DOBLE;
     }
 
     precio =
-      ((100 - this.#cliente.tipoCliente.porcentajeDescuento) * precio) / 100;
+      ((PORCENTAJE_PRECIO_TOTAL_EXAMEN -
+        this.#cliente.tipoCliente.porcentajeDescuento) *
+        precio) /
+      PORCENTAJE_PRECIO_TOTAL_EXAMEN;
 
     return precio;
   }

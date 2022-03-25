@@ -1,10 +1,32 @@
 import { ErrorCodigoClienteInvalido } from 'src/dominio/errores/error-codigo-cliente-invalido';
 
 export class EnumeracionTipoCliente {
-  public static readonly CLIENTE_TIPO_1 = new EnumeracionTipoCliente(1, 10);
-  public static readonly CLIENTE_TIPO_2 = new EnumeracionTipoCliente(2, 20);
-  public static readonly CLIENTE_TIPO_3 = new EnumeracionTipoCliente(3, 30);
-  public static readonly CLIENTE_TIPO_4 = new EnumeracionTipoCliente(4, 0);
+  static readonly CODIGO_CLIENTE_TIPO_1 = 1;
+  static readonly CODIGO_CLIENTE_TIPO_2 = 2;
+  static readonly CODIGO_CLIENTE_TIPO_3 = 3;
+  static readonly CODIGO_CLIENTE_TIPO_4 = 4;
+
+  static readonly PORCENTAJE_DESCUENTO_TIPO_1 = 10;
+  static readonly PORCENTAJE_DESCUENTO_TIPO_2 = 20;
+  static readonly PORCENTAJE_DESCUENTO_TIPO_3 = 30;
+  static readonly PORCENTAJE_DESCUENTO_TIPO_4 = 0;
+
+  public static readonly CLIENTE_TIPO_1 = new EnumeracionTipoCliente(
+    EnumeracionTipoCliente.CODIGO_CLIENTE_TIPO_1,
+    EnumeracionTipoCliente.PORCENTAJE_DESCUENTO_TIPO_1
+  );
+  public static readonly CLIENTE_TIPO_2 = new EnumeracionTipoCliente(
+    EnumeracionTipoCliente.CODIGO_CLIENTE_TIPO_2,
+    EnumeracionTipoCliente.PORCENTAJE_DESCUENTO_TIPO_2
+  );
+  public static readonly CLIENTE_TIPO_3 = new EnumeracionTipoCliente(
+    EnumeracionTipoCliente.CODIGO_CLIENTE_TIPO_3,
+    EnumeracionTipoCliente.PORCENTAJE_DESCUENTO_TIPO_3
+  );
+  public static readonly CLIENTE_TIPO_4 = new EnumeracionTipoCliente(
+    EnumeracionTipoCliente.CODIGO_CLIENTE_TIPO_4,
+    EnumeracionTipoCliente.PORCENTAJE_DESCUENTO_TIPO_4
+  );
 
   public static readonly CODIGO_TIPO_DE_CLIENTE_INVALIDO: string =
     'El código del tipo de cliente es inválido';
