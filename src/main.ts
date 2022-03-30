@@ -27,6 +27,7 @@ async function bootstrap() {
   SwaggerModule.setup('/api/doc', app, swaggerDocument);
 
   app.setGlobalPrefix(configService.get(EnvVariables.APPLICATION_CONTEXT_PATH));
+  app.enableCors();
   await app.listen(configService.get(EnvVariables.APPLICATION_PORT));
 }
 bootstrap();

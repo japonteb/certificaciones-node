@@ -13,12 +13,12 @@ export class ComandoCertificacion {
   @ApiProperty({ example: 'Java EE y Servicios Web' })
   public detalle: string;
 
-  @IsInt()
+  @IsInt({ message: 'La duración debe ser un número entero' })
   @Min(0, { message: 'La duración debe ser mayor a cero' })
   @ApiProperty({ example: 120 })
   public duracion: number;
 
-  @IsNumber()
+  @IsNumber({}, { message: 'El precio debe ser un número' })
   @Min(0, { message: 'El precio debe ser mayor a cero' })
   @ApiProperty({ example: 1000 })
   public precio: number;

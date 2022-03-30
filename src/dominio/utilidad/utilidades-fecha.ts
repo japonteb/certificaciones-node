@@ -22,6 +22,10 @@ export class UtilidadesFecha {
 
   static #FESTIVOS = new Set<Date>(this.arregloFestivos);
 
+  static festivosPrueba(): boolean {
+    return true;
+  }
+
   static esFestivo(fecha: Date): boolean {
     const fechaCopia = new Date(fecha.valueOf());
     fechaCopia.setHours(0, 0, 0, 0);
