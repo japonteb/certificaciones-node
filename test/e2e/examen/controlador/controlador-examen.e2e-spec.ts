@@ -101,9 +101,8 @@ describe('Pruebas al controlador de examenes', () => {
     const response = await request(app.getHttpServer())
       .post('/examenes')
       .send(examen)
-      .expect(HttpStatus.FORBIDDEN);
+      .expect(HttpStatus.BAD_REQUEST);
     expect(response.body.message).toBe(mensaje);
-    expect(response.body.status).toBe(HttpStatus.FORBIDDEN);
   });
 
   it('debería registar un examen con un cliente y una certificacion no existentes', async () => {

@@ -123,9 +123,8 @@ describe('Pruebas al controlador de certificaciones', () => {
     const response = await request(app.getHttpServer())
       .post('/certificaciones')
       .send(certificacion)
-      .expect(HttpStatus.FORBIDDEN);
+      .expect(HttpStatus.BAD_REQUEST);
     expect(response.body.message).toBe(mensaje);
-    expect(response.body.status).toBe(HttpStatus.FORBIDDEN);
   });
 
   it('debería registar una certificacion con un nombre y detalle no existentes', async () => {

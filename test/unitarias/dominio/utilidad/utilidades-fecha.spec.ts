@@ -2,48 +2,42 @@ import { UtilidadesFecha } from 'src/dominio/utilidad/utilidades-fecha';
 
 describe('Utilidades Fecha', () => {
   it('Deberia devolver que no es festivo', () => {
-    // assert
-    expect(UtilidadesFecha.festivosPrueba()).toBe(true);
-  });
-  /*
-  it('Deberia devolver que no es festivo', () => {
-    // arrange
-    const fecha: Date = new Date('2022-2-23');
+    // Arrange
+    const fecha: Date = new Date(Date.UTC(2022, 3, 6, 5, 0, 0));
 
-    // assert
+    // Act - Assert
     expect(UtilidadesFecha.esFestivo(fecha)).toBe(false);
   });
 
   it('Deberia devolver que si es festivo', () => {
-    // arrange
-    const fecha = new Date('2022-12-25');
+    // Arrange
+    const fecha: Date = new Date(Date.UTC(2022, 11, 25, 5, 0, 0));
 
-    // assert
-    expect(UtilidadesFecha.esFestivo(fecha)).toBe(false);
+    // Act - Assert
+    expect(UtilidadesFecha.esFestivo(fecha)).toBe(true);
   });
 
   it('Deberia devolver que no es fin de semana', () => {
-    // arrange
-    const fecha: Date = new Date('2017-12-22');
+    // Arrange
+    const fecha: Date = new Date(Date.UTC(2022, 3, 6, 5, 0, 0));
 
-    // assert
+    // Act - Assert
     expect(UtilidadesFecha.esFinDeSemana(fecha)).toBe(false);
   });
 
   it('Deberia devolver que si es fin de semana para un sábado', () => {
-    // arrange
-    const fecha: Date = new Date('2017-12-23');
+    // Arrange
+    const fecha: Date = new Date(Date.UTC(2022, 5, 11, 5, 0, 0));
 
-    // assert
-    expect(UtilidadesFecha.esFinDeSemana(fecha)).toBe(false);
+    // Act - Assert
+    expect(UtilidadesFecha.esFinDeSemana(fecha)).toBe(true);
   });
 
   it('Deberia devolver que si es fin de semana para un domingo', () => {
-    // arrange
-    const fecha: Date = new Date('2017-12-24');
+    // Arrange
+    const fecha: Date = new Date(Date.UTC(2022, 9, 23, 5, 0, 0));
 
-    // assert
+    // Act - Assert
     expect(UtilidadesFecha.esFinDeSemana(fecha)).toBe(true);
   });
-  */
 });

@@ -20,17 +20,19 @@ export class UtilidadesFecha {
     new Date('2022-12-25'),
   ];
 
-  static #FESTIVOS = new Set<Date>(this.arregloFestivos);
+  public static esFestivo(fecha: Date): boolean {
+    let respuesta = false;
 
-  static festivosPrueba(): boolean {
-    return true;
-  }
+    this.arregloFestivos.forEach((festivo) => {
+      if (
+        festivo.getUTCMonth() === fecha.getUTCMonth() &&
+        festivo.getUTCDate() === fecha.getUTCDate()
+      ) {
+        respuesta = true;
+      }
+    });
 
-  static esFestivo(fecha: Date): boolean {
-    const fechaCopia = new Date(fecha.valueOf());
-    fechaCopia.setHours(0, 0, 0, 0);
-
-    return this.#FESTIVOS.has(fechaCopia);
+    return respuesta;
   }
 
   public static esFinDeSemana(fecha: Date): boolean {

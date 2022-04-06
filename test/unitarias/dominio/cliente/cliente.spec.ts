@@ -56,6 +56,8 @@ describe('Cliente', () => {
 
     // Assert
     expect(cliente.nombre).toEqual('William');
-    expect(cliente.tipoCliente).toEqual(EnumeracionTipoCliente.CLIENTE_TIPO_4);
+    expect(cliente.tipoCliente).toEqual(
+      EnumeracionTipoCliente.CLIENTE_TIPO_4.codigoTipoCliente
+    );
   });
 });

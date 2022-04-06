@@ -10,13 +10,20 @@ export class ExamenTestDataBuilder {
   #certificacion: Certificacion;
   #fechaPresentacion: string;
 
-  constructor() {
-    this.#id = 1;
-    this.#cliente = new ClienteTestDataBuilder().build();
-    this.#certificacion = new CertificacionTestDataBuilder().build();
-    this.#fechaPresentacion = new Date(
-      Date.now() + 3600 * 1000 * 24
-    ).toISOString();
+  constructor(copia?: ExamenTestDataBuilder) {
+    if (typeof copia === 'undefined') {
+      this.#id = 1;
+      this.#cliente = new ClienteTestDataBuilder().build();
+      this.#certificacion = new CertificacionTestDataBuilder().build();
+      this.#fechaPresentacion = new Date(
+        Date.now() + 3600 * 1000 * 24
+      ).toISOString();
+    } else {
+      this.#id = copia.#id;
+      this.#cliente = copia.#cliente;
+      this.#certificacion = copia.#certificacion;
+      this.#fechaPresentacion = copia.#fechaPresentacion;
+    }
   }
 
   public conId(id: number): ExamenTestDataBuilder {
@@ -48,5 +55,9 @@ export class ExamenTestDataBuilder {
       this.#certificacion,
       this.#fechaPresentacion
     );
+  }
+
+  public pero(): ExamenTestDataBuilder {
+    return new ExamenTestDataBuilder(this);
   }
 }

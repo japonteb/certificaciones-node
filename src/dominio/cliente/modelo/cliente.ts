@@ -1,4 +1,5 @@
 import { ValidadorArgumento } from 'src/dominio/validador/validador-argumento';
+import { EnumeracionTipoCliente } from './enumeracion-tipo-cliente';
 
 export class Cliente {
   readonly #id: number;
@@ -24,6 +25,8 @@ export class Cliente {
     this.#id = id;
     this.#nombre = nombre;
     this.#tipoCliente = tipoCliente;
+
+    EnumeracionTipoCliente.obtenerEnumeracionTipoClienteDeCodigo(tipoCliente);
   }
 
   get id(): number {
