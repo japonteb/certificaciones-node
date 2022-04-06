@@ -1,10 +1,9 @@
 import { ValidadorArgumento } from 'src/dominio/validador/validador-argumento';
-import { EnumeracionTipoCliente } from './enumeracion-tipo-cliente';
 
 export class Cliente {
   readonly #id: number;
   readonly #nombre: string;
-  readonly #tipoCliente: EnumeracionTipoCliente;
+  readonly #tipoCliente: number;
 
   readonly SE_DEBE_INGRESAR_EL_NOMBRE_DE_CLIENTE: string =
     'Se debe ingresar el nombre del cliente';
@@ -24,8 +23,7 @@ export class Cliente {
 
     this.#id = id;
     this.#nombre = nombre;
-    this.#tipoCliente =
-      EnumeracionTipoCliente.obtenerEnumeracionTipoClienteDeCodigo(tipoCliente);
+    this.#tipoCliente = tipoCliente;
   }
 
   get id(): number {
@@ -36,7 +34,7 @@ export class Cliente {
     return this.#nombre;
   }
 
-  get tipoCliente(): EnumeracionTipoCliente {
+  get tipoCliente(): number {
     return this.#tipoCliente;
   }
 }

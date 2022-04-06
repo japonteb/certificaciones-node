@@ -1,6 +1,6 @@
-export class ErrorIntegridadDatos extends Error {
-  constructor(mensaje: string, clase?: string) {
-    super(mensaje);
-    this.name = clase || ErrorIntegridadDatos.name;
+import { ErrorDeNegocio } from 'src/dominio/errores/error-de-negocio';
+export class ErrorIntegridadDatos extends ErrorDeNegocio {
+  constructor(mensaje: string) {
+    super(mensaje, ErrorIntegridadDatos.name);
   }
 }

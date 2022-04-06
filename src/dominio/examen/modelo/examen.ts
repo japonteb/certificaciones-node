@@ -1,5 +1,6 @@
 import { Certificacion } from 'src/dominio/certificacion/modelo/certificacion';
 import { Cliente } from 'src/dominio/cliente/modelo/cliente';
+import { EnumeracionTipoCliente } from 'src/dominio/cliente/modelo/enumeracion-tipo-cliente';
 import { UtilidadesFecha } from 'src/dominio/utilidad/utilidades-fecha';
 import { ValidadorArgumento } from 'src/dominio/validador/validador-argumento';
 
@@ -85,7 +86,9 @@ export class Examen {
 
     precio =
       ((PORCENTAJE_PRECIO_TOTAL_EXAMEN -
-        this.#cliente.tipoCliente.porcentajeDescuento) *
+        EnumeracionTipoCliente.obtenerEnumeracionTipoClienteDeCodigo(
+          this.#cliente.tipoCliente
+        ).porcentajeDescuento) *
         precio) /
       PORCENTAJE_PRECIO_TOTAL_EXAMEN;
 

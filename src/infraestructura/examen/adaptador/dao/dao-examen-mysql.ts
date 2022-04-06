@@ -13,7 +13,12 @@ export class DaoExamenMysql implements DaoExamen {
 
   async listarPorClienteId(clienteId: number): Promise<ExamenDto[]> {
     return this.entityManager.query(
-      `SELECT e.id, e.clienteId, e.certificacionId, e.fechaPresentacion, e.precioTotal  FROM EXAMEN e WHERE e.clienteId = ${clienteId}`
+      `SELECT e.id, c.nombre, c.detalle, e.fechaPresentacion, e.precioTotal 
+      FROM EXAMEN e 
+      INNER JOIN certificacion c 
+      ON 
+      c.id = e.certificacionId 
+      WHERE e.clienteId = ${clienteId}`
     );
   }
 }

@@ -1,6 +1,7 @@
-export class ErrorDuplicidad extends Error {
-  constructor(mensaje: string, clase?: string) {
-    super(mensaje);
-    this.name = clase || ErrorDuplicidad.name;
+import { ErrorDeNegocio } from './error-de-negocio';
+
+export class ErrorDuplicidad extends ErrorDeNegocio {
+  constructor(mensaje: string) {
+    super(mensaje, ErrorDuplicidad.name);
   }
 }
