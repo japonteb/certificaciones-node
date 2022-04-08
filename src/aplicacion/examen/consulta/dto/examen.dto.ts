@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
 
 export class ExamenDto {
   @ApiProperty({ example: 'Java' })
@@ -15,7 +16,8 @@ export class ExamenDto {
   detalleCertificacion: string;
 
   @ApiProperty({ example: '2022-03-22 15:48:02' })
-  fechaPresentacion: number;
+  @Type(() => Date)
+  fechaPresentacion: Date;
 
   @ApiProperty({ example: 1000 })
   precioTotal: number;
