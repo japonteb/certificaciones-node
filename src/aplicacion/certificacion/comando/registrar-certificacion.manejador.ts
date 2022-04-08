@@ -13,7 +13,7 @@ export class ManejadorRegistrarCertificacion {
   async ejecutar(
     comandoCertificacion: ComandoCertificacion
   ): Promise<CertificacionDto> {
-    return await this._servicioRegistrarCertificacion.ejecutar(
+    return this._servicioRegistrarCertificacion.ejecutar(
       new Certificacion(
         comandoCertificacion.id,
         comandoCertificacion.nombre,

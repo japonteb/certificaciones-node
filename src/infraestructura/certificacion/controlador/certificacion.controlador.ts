@@ -27,9 +27,7 @@ export class CertificacionControlador {
   async crear(
     @Body() comandoCertificacion: ComandoCertificacion
   ): Promise<CertificacionDto> {
-    return await this._manejadorRegistrarCertificacion.ejecutar(
-      comandoCertificacion
-    );
+    return this._manejadorRegistrarCertificacion.ejecutar(comandoCertificacion);
   }
 
   @Delete(':id')
