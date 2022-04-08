@@ -19,6 +19,6 @@ export class ServicioRegistrarCertificacion {
         `La certificación con nombre ${certificacion.nombre} y detalle ${certificacion.detalle} ya existe en el sistema`
       );
     }
-    return await this._repositorioCertificacion.guardar(certificacion);
+    return this._repositorioCertificacion.guardar(certificacion);
   }
 }

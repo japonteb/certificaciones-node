@@ -18,6 +18,6 @@ export class ServicioEliminarCertificacion {
         `No se puede eliminar la certificación ${certificacionId} porque está asociada a exámenes`
       );
     }
-    this._repositorioCertificacion.eliminar(certificacionId);
+    await this._repositorioCertificacion.eliminar(certificacionId);
   }
 }
