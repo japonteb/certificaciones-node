@@ -1,3 +1,4 @@
+import { CertificacionDto } from './../../../../aplicacion/certificacion/consulta/dto/certificacion.dto';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Certificacion } from 'src/dominio/certificacion/modelo/certificacion';
@@ -12,13 +13,15 @@ export class RepositorioCertificacionMysql implements RepositorioCertificacion {
     private readonly repositorio: Repository<CertificacionEntidad>
   ) {}
 
-  async guardar(certificacion: Certificacion) {
+  async guardar(certificacion: Certificacion): Promise<CertificacionDto> {
     const entidad = new CertificacionEntidad();
     entidad.nombre = certificacion.nombre;
     entidad.detalle = certificacion.detalle;
     entidad.duracion = certificacion.duracion;
     entidad.precio = certificacion.precio;
-    await this.repositorio.save(entidad);
+    const certificacionEntidad: CertificacionEntidad =
+      await this.repositorio.save(entidad);
+    return CertificacionDto.deCertificacionEntidad(certificacionEntidad);
   }
 
   async eliminar(certificacionId: number) {

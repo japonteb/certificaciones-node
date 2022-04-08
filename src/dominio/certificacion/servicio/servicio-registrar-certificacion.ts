@@ -1,3 +1,4 @@
+import { CertificacionDto } from 'src/aplicacion/certificacion/consulta/dto/certificacion.dto';
 import { ErrorDuplicidad } from 'src/dominio/errores/error-duplicidad';
 import { Certificacion } from '../modelo/certificacion';
 import { RepositorioCertificacion } from '../puerto/repositorio/repositorio-certificacion';
@@ -7,7 +8,7 @@ export class ServicioRegistrarCertificacion {
     private readonly _repositorioCertificacion: RepositorioCertificacion
   ) {}
 
-  async ejecutar(certificacion: Certificacion) {
+  async ejecutar(certificacion: Certificacion): Promise<CertificacionDto> {
     if (
       await this._repositorioCertificacion.existePorNombreYDetalle(
         certificacion.nombre,
@@ -18,6 +19,6 @@ export class ServicioRegistrarCertificacion {
         `La certificación con nombre ${certificacion.nombre} y detalle ${certificacion.detalle} ya existe en el sistema`
       );
     }
-    await this._repositorioCertificacion.guardar(certificacion);
+    return await this._repositorioCertificacion.guardar(certificacion);
   }
 }

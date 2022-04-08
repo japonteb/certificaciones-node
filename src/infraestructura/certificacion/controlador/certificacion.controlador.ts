@@ -24,8 +24,12 @@ export class CertificacionControlador {
 
   @Post()
   @UsePipes(new ValidationPipe({ transform: true }))
-  async crear(@Body() comandoCertificacion: ComandoCertificacion) {
-    await this._manejadorRegistrarCertificacion.ejecutar(comandoCertificacion);
+  async crear(
+    @Body() comandoCertificacion: ComandoCertificacion
+  ): Promise<CertificacionDto> {
+    return await this._manejadorRegistrarCertificacion.ejecutar(
+      comandoCertificacion
+    );
   }
 
   @Delete(':id')
