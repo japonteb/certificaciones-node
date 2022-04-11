@@ -9,6 +9,13 @@ export class ServicioRegistrarCertificacion {
   ) {}
 
   async ejecutar(certificacion: Certificacion): Promise<CertificacionDto> {
+    await this.validarExistenciaCertificacionConNombreYDetalle(certificacion);
+    return this._repositorioCertificacion.guardar(certificacion);
+  }
+
+  private async validarExistenciaCertificacionConNombreYDetalle(
+    certificacion: Certificacion
+  ) {
     if (
       await this._repositorioCertificacion.existePorNombreYDetalle(
         certificacion.nombre,
@@ -19,6 +26,5 @@ export class ServicioRegistrarCertificacion {
         `La certificación con nombre ${certificacion.nombre} y detalle ${certificacion.detalle} ya existe en el sistema`
       );
     }
-    return this._repositorioCertificacion.guardar(certificacion);
   }
 }

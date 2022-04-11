@@ -87,9 +87,10 @@
       [
         "jest-sonar",
         {
-          "outputDirectory": ".",
+          "outputDirectory": "../coverage",
           "outputName": "../coverage/sonar-report.xml",
-          "reportedFilePath": "absolute"
+          "reportedFilePath": "absolute",
+          "relativeRootDir": "."
         }
       ]
     ]
