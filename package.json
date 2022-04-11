@@ -84,7 +84,14 @@
     ],
     "reporters": [
       "default",
-      "jest-sonar"
+      [
+        "jest-sonar",
+        {
+          "outputDirectory": "../coverage",
+          "outputName": "sonar-report.xml",
+          "reportedFilePath": "absolute"
+        }
+      ]
     ]
   }
 }
