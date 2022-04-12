@@ -79,6 +79,7 @@
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "coverageDirectory": "./coverage",
+    "collectCoverage": true,
     "testEnvironment": "node",
     "modulePaths": [
       "<rootDir>"
