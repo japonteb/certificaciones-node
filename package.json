@@ -83,12 +83,11 @@
     "modulePaths": [
       "<rootDir>"
     ],
-    "testResultsProcessor": "jest-sonar-reporter",
-    "jestSonar": {
-      "sonar56x": true,
-      "reportPath": "./coverage/coverage",
-      "reportFile": "sonar-report.xml",
-      "indent": 4
-    }
+    "testResultsProcessor": "jest-sonar-reporter"
+  },
+  "jestSonar": {
+    "reportPath": "./coverage/coverage",
+    "reportFile": "sonar-report.xml",
+    "indent": 4
   }
 }
