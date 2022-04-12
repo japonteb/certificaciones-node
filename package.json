@@ -85,21 +85,10 @@
     ],
     "testResultsProcessor": "jest-sonar-reporter",
     "jestSonar": {
-      "reportPath": ".",
-      "reportFile": "test-reporter.xml",
+      "sonar56x": true,
+      "reportPath": "./coverage/coverage",
+      "reportFile": "sonar-report.xml",
       "indent": 4
-    },
-    "reporters": [
-      "default",
-      [
-        "jest-sonar",
-        {
-          "outputDirectory": "./coverage",
-          "outputName": "./coverage/sonar-report.xml",
-          "reportedFilePath": "absolute",
-          "relativeRootDir": "."
-        }
-      ]
-    ]
+    }
   }
 }
