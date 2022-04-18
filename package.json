@@ -84,10 +84,5 @@
       "<rootDir>"
     ],
     "testResultsProcessor": "jest-sonar-reporter"
-  },
-  "jestSonar": {
-    "reportPath": ".",
-    "reportFile": "test-report.xml",
-    "indent": 4
   }
 }
