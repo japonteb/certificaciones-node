@@ -79,11 +79,15 @@
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "coverageDirectory": "./coverage",
-    "collectCoverage": true,
     "testEnvironment": "node",
     "modulePaths": [
       "<rootDir>"
     ],
     "testResultsProcessor": "jest-sonar-reporter"
+  },
+  "jestSonar": {
+    "reportPath": ".",
+    "reportFile": "test-report.xml",
+    "indent": 4
   }
 }
