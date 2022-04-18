@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\examen\examen.spec.ts">
-        <testCase name="Examen examen sin cliente debería retornar error" duration="14"/>
-        <testCase name="Examen examen sin certificación debería retornar error" duration="1"/>
-        <testCase name="Examen examen sin fecha de presentación debería retornar error" duration="1"/>
-        <testCase name="Examen examen con fecha de presentación anterior a la fecha actual debería retornar error" duration="2"/>
-        <testCase name="Examen examen con cliente, certificación y fecha de presentación posterior a la actual debería crear bien" duration="6"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 1 dia entre semana" duration="0"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 1 dia fin de semana" duration="0"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 1 festivo" duration="1"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 2 dia entre semana" duration="0"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 2 dia fin de semana" duration="1"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 2 festivo" duration="1"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 3 dia entre semana" duration="0"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 3 dia fin de semana" duration="1"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 3 festivo" duration="0"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 4 dia entre semana" duration="1"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 4 dia fin de semana" duration="0"/>
-        <testCase name="Examen deberia calcular precio con descuento cliente tipo 4 festivo" duration="1"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\certificacion\servicio-eliminar-certificacion.spec.ts">
-        <testCase name="ServicioEliminarCertificacion si la certificación está asociada con un examen deberia no eliminar la certificacion" duration="18"/>
-        <testCase name="ServicioEliminarCertificacion si la certificación no está asociada con un examen deberia eliminar la certificacion" duration="5"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\usuario\servicio-registrar-usuario.spec.ts">
-        <testCase name="ServicioRegistrarUsuario si el nombre de usuario ya existe no se puede crear y deberia retonar error" duration="18"/>
-        <testCase name="ServicioRegistrarUsuario si el nombre no existe guarda el usuario el repositorio" duration="5"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\examen\servicio-registrar-examen.spec.ts">
-        <testCase name="ServicioRegistrarExamen si ya existe un examen programado para el cliente y certificacion no se puede crear y deberia retonar error" duration="27"/>
-        <testCase name="ServicioRegistrarExamen si no existe un examen programado para el cliente y certificacion no se puede crear y deberia guardar el examen en el repositorio" duration="5"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\certificacion\certificacion.spec.ts">
-        <testCase name="Certificacion certificacion sin nombre debería retornar error" duration="7"/>
-        <testCase name="Certificacion certificacion sin detalle debería retornar error" duration="1"/>
-        <testCase name="Certificacion certificacion sin duracion debería retornar error" duration="1"/>
-        <testCase name="Certificacion certificacion sin precio debería retornar error" duration="1"/>
-        <testCase name="Certificacion certificacion con duración negativa debería retornar error" duration="2"/>
-        <testCase name="Certificacion certificacion con duración cero debería retornar error" duration="5"/>
-        <testCase name="Certificacion certificacion con precio negativo debería retornar error" duration="0"/>
-        <testCase name="Certificacion certificacion con precio cero debería retornar error" duration="1"/>
-        <testCase name="Certificacion certificacion con nombre, detalle, duración y precio debería crear bien" duration="2"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\utilidad\utilidades-fecha.spec.ts">
-        <testCase name="Utilidades Fecha Deberia devolver que no es festivo" duration="3"/>
-        <testCase name="Utilidades Fecha Deberia devolver que si es festivo" duration="1"/>
-        <testCase name="Utilidades Fecha Deberia devolver que no es fin de semana" duration="2"/>
-        <testCase name="Utilidades Fecha Deberia devolver que si es fin de semana para un sábado" duration="1"/>
-        <testCase name="Utilidades Fecha Deberia devolver que si es fin de semana para un domingo" duration="0"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\cliente\cliente.spec.ts">
-        <testCase name="Cliente cliente sin nombre debería retornar error" duration="6"/>
-        <testCase name="Cliente cliente sin tipo de cliente debería retornar error" duration="1"/>
-        <testCase name="Cliente cliente con tipo de cliente inválido debería retornar error" duration="0"/>
-        <testCase name="Cliente cliente con tipo de cliente correcto debería retornar la enumeración del tipo de cliente correcto" duration="2"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\certificacion\servicio-registrar-certificacion.spec.ts">
-        <testCase name="ServicioRegistrarCertificacion si ya existe una certificación con el nombre y detalle entonces no se puede crear y deberia retonar error" duration="14"/>
-        <testCase name="ServicioRegistrarCertificacion si no existe una certificacion con el nombre y detalle deberia guardar la certificacion en el repositorio" duration="4"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\usuario\usuario.spec.ts">
-        <testCase name="Usuario usuario con clave menor que 4 debería retornar error" duration="7"/>
-        <testCase name="Usuario usuario con clave igual a 4 debería crear bien" duration="1"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\e2e\cliente\controlador\controlador-cliente.e2e-spec.ts">
-        <testCase name="Pruebas al controlador de clientes debería listar las clientes registrados" duration="37"/>
-        <testCase name="Pruebas al controlador de clientes debería listar cliente por id" duration="7"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\e2e\usuario\controlador\controlador-usuario.e2e-spec.ts">
-        <testCase name="Pruebas al controlador de usuarios debería listar los usuarios registrados" duration="36"/>
-        <testCase name="Pruebas al controlador de usuarios debería fallar al registar un usuario clave muy corta" duration="36"/>
-        <testCase name="Pruebas al controlador de usuarios debería fallar al registar un usuario ya existente" duration="5"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\e2e\certificacion\controlador\controlador-certificacion.e2e-spec.ts">
-        <testCase name="Pruebas al controlador de certificaciones debería listar las certificaciones registrados" duration="37"/>
-        <testCase name="Pruebas al controlador de certificaciones debería fallar al registar un certificacion con un nombre y detalle ya existente" duration="31"/>
-        <testCase name="Pruebas al controlador de certificaciones debería registar una certificacion con un nombre y detalle no existentes" duration="4"/>
-    </file>
-    <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\e2e\examen\controlador\controlador-examen.e2e-spec.ts">
-        <testCase name="Pruebas al controlador de examenes debería listar examenes por cliente por id" duration="33"/>
-        <testCase name="Pruebas al controlador de examenes debería fallar al registar un examen con un cliente y una certificacion ya existentes" duration="35"/>
-        <testCase name="Pruebas al controlador de examenes debería registar un examen con un cliente y una certificacion no existentes" duration="4"/>
-    </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\examen\examen.spec.ts">
+    <testCase name="Examen examen sin cliente debería retornar error" duration="5"/>
+    <testCase name="Examen examen sin certificación debería retornar error" duration="1"/>
+    <testCase name="Examen examen sin fecha de presentación debería retornar error" duration="1"/>
+    <testCase name="Examen examen con fecha de presentación anterior a la fecha actual debería retornar error" duration="2"/>
+    <testCase name="Examen examen con cliente, certificación y fecha de presentación posterior a la actual debería crear bien" duration="6"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 1 dia entre semana" duration="1"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 1 dia fin de semana" duration="1"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 1 festivo" duration="1"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 2 dia entre semana" duration="0"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 2 dia fin de semana" duration="1"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 2 festivo" duration="0"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 3 dia entre semana" duration="1"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 3 dia fin de semana" duration="1"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 3 festivo" duration="0"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 4 dia entre semana" duration="1"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 4 dia fin de semana" duration="0"/>
+    <testCase name="Examen deberia calcular precio con descuento cliente tipo 4 festivo" duration="1"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\certificacion\servicio-eliminar-certificacion.spec.ts">
+    <testCase name="ServicioEliminarCertificacion si la certificación está asociada con un examen deberia no eliminar la certificacion" duration="54"/>
+    <testCase name="ServicioEliminarCertificacion si la certificación no está asociada con un examen deberia eliminar la certificacion" duration="5"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\examen\servicio-registrar-examen.spec.ts">
+    <testCase name="ServicioRegistrarExamen si ya existe un examen programado para el cliente y certificacion no se puede crear y deberia retonar error" duration="35"/>
+    <testCase name="ServicioRegistrarExamen si no existe un examen programado para el cliente y certificacion no se puede crear y deberia guardar el examen en el repositorio" duration="6"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\usuario\servicio-registrar-usuario.spec.ts">
+    <testCase name="ServicioRegistrarUsuario si el nombre de usuario ya existe no se puede crear y deberia retonar error" duration="44"/>
+    <testCase name="ServicioRegistrarUsuario si el nombre no existe guarda el usuario el repositorio" duration="6"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\cliente\cliente.spec.ts">
+    <testCase name="Cliente cliente sin nombre debería retornar error" duration="7"/>
+    <testCase name="Cliente cliente sin tipo de cliente debería retornar error" duration="2"/>
+    <testCase name="Cliente cliente con tipo de cliente inválido debería retornar error" duration="1"/>
+    <testCase name="Cliente cliente con tipo de cliente correcto debería retornar la enumeración del tipo de cliente correcto" duration="1"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\certificacion\certificacion.spec.ts">
+    <testCase name="Certificacion certificacion sin nombre debería retornar error" duration="6"/>
+    <testCase name="Certificacion certificacion sin detalle debería retornar error" duration="1"/>
+    <testCase name="Certificacion certificacion sin duracion debería retornar error" duration="1"/>
+    <testCase name="Certificacion certificacion sin precio debería retornar error" duration="1"/>
+    <testCase name="Certificacion certificacion con duración negativa debería retornar error" duration="1"/>
+    <testCase name="Certificacion certificacion con duración cero debería retornar error" duration="1"/>
+    <testCase name="Certificacion certificacion con precio negativo debería retornar error" duration="0"/>
+    <testCase name="Certificacion certificacion con precio cero debería retornar error" duration="1"/>
+    <testCase name="Certificacion certificacion con nombre, detalle, duración y precio debería crear bien" duration="2"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\certificacion\servicio-registrar-certificacion.spec.ts">
+    <testCase name="ServicioRegistrarCertificacion si ya existe una certificación con el nombre y detalle entonces no se puede crear y deberia retonar error" duration="21"/>
+    <testCase name="ServicioRegistrarCertificacion si no existe una certificacion con el nombre y detalle deberia guardar la certificacion en el repositorio" duration="4"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\usuario\usuario.spec.ts">
+    <testCase name="Usuario usuario con clave menor que 4 debería retornar error" duration="2"/>
+    <testCase name="Usuario usuario con clave igual a 4 debería crear bien" duration="3"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\unitarias\dominio\utilidad\utilidades-fecha.spec.ts">
+    <testCase name="Utilidades Fecha Deberia devolver que no es festivo" duration="2"/>
+    <testCase name="Utilidades Fecha Deberia devolver que si es festivo" duration="1"/>
+    <testCase name="Utilidades Fecha Deberia devolver que no es fin de semana" duration="2"/>
+    <testCase name="Utilidades Fecha Deberia devolver que si es fin de semana para un sábado" duration="1"/>
+    <testCase name="Utilidades Fecha Deberia devolver que si es fin de semana para un domingo" duration="7"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\e2e\cliente\controlador\controlador-cliente.e2e-spec.ts">
+    <testCase name="Pruebas al controlador de clientes debería listar las clientes registrados" duration="40"/>
+    <testCase name="Pruebas al controlador de clientes debería listar cliente por id" duration="8"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\e2e\usuario\controlador\controlador-usuario.e2e-spec.ts">
+    <testCase name="Pruebas al controlador de usuarios debería listar los usuarios registrados" duration="46"/>
+    <testCase name="Pruebas al controlador de usuarios debería fallar al registar un usuario clave muy corta" duration="39"/>
+    <testCase name="Pruebas al controlador de usuarios debería fallar al registar un usuario ya existente" duration="6"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\e2e\certificacion\controlador\controlador-certificacion.e2e-spec.ts">
+    <testCase name="Pruebas al controlador de certificaciones debería listar las certificaciones registrados" duration="40"/>
+    <testCase name="Pruebas al controlador de certificaciones debería fallar al registar un certificacion con un nombre y detalle ya existente" duration="45"/>
+    <testCase name="Pruebas al controlador de certificaciones debería registar una certificacion con un nombre y detalle no existentes" duration="4"/>
+  </file>
+  <file path="C:\Users\javier.aponte\Documents\Development\ADN-Node\node-nestjs-arquitectura-hexagonal\test\e2e\examen\controlador\controlador-examen.e2e-spec.ts">
+    <testCase name="Pruebas al controlador de examenes debería listar examenes por cliente por id" duration="44"/>
+    <testCase name="Pruebas al controlador de examenes debería fallar al registar un examen con un cliente y una certificacion ya existentes" duration="38"/>
+    <testCase name="Pruebas al controlador de examenes debería registar un examen con un cliente y una certificacion no existentes" duration="4"/>
+  </file>
 </testExecutions>
