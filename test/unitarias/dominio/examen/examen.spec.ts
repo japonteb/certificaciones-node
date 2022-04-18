@@ -17,10 +17,10 @@ describe('Examen', () => {
 
   beforeAll(() => {
     fechaPresentacionEntreSemana = new Date(
-      Date.UTC(2022, 3, 13, 13, 0, 0)
+      Date.UTC(2022, 3, 27, 13, 0, 0)
     ).toISOString();
     fechaPresentacionFinDeSemana = new Date(
-      Date.UTC(2022, 3, 16, 13, 0, 0)
+      Date.UTC(2022, 3, 30, 13, 0, 0)
     ).toISOString();
     fechaPresentacionFestivo = new Date(
       Date.UTC(2022, 11, 25, 13, 0, 0)
@@ -142,121 +142,151 @@ describe('Examen', () => {
 
   it('deberia calcular precio con descuento cliente tipo 1 dia entre semana', () => {
     // Arrange - act
+    const PRECIO_ENTRE_SEMANA_CON_10_PORCIENTO__DE_DESCUENTO = 90;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo1ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionEntreSemana)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(90);
+    expect(examen.precioTotal).toEqual(
+      PRECIO_ENTRE_SEMANA_CON_10_PORCIENTO__DE_DESCUENTO
+    );
   });
 
   it('deberia calcular precio con descuento cliente tipo 1 dia fin de semana', () => {
     // Arrange - act
+    const PRECIO_FIN_DE_SEMANA_CON_10_PORCIENTO__DE_DESCUENTO = 180;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo1ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionFinDeSemana)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(180);
+    expect(examen.precioTotal).toEqual(
+      PRECIO_FIN_DE_SEMANA_CON_10_PORCIENTO__DE_DESCUENTO
+    );
   });
 
   it('deberia calcular precio con descuento cliente tipo 1 festivo', () => {
     // Arrange - act
+    const PRECIO_FESTIVO_CON_10_PORCIENTO__DE_DESCUENTO = 270;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo1ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionFestivo)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(270);
+    expect(examen.precioTotal).toEqual(
+      PRECIO_FESTIVO_CON_10_PORCIENTO__DE_DESCUENTO
+    );
   });
 
   it('deberia calcular precio con descuento cliente tipo 2 dia entre semana', () => {
     // Arrange - act
+    const PRECIO_ENTRE_SEMANA_CON_20_PORCIENTO__DE_DESCUENTO = 80;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo2ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionEntreSemana)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(80);
+    expect(examen.precioTotal).toEqual(
+      PRECIO_ENTRE_SEMANA_CON_20_PORCIENTO__DE_DESCUENTO
+    );
   });
 
   it('deberia calcular precio con descuento cliente tipo 2 dia fin de semana', () => {
     // Arrange - act
+    const PRECIO_FIN_DE_SEMANA_CON_20_PORCIENTO__DE_DESCUENTO = 160;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo2ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionFinDeSemana)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(160);
+    expect(examen.precioTotal).toEqual(
+      PRECIO_FIN_DE_SEMANA_CON_20_PORCIENTO__DE_DESCUENTO
+    );
   });
 
   it('deberia calcular precio con descuento cliente tipo 2 festivo', () => {
     // Arrange - act
+    const PRECIO_FESTIVO_CON_20_PORCIENTO__DE_DESCUENTO = 240;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo2ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionFestivo)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(240);
+    expect(examen.precioTotal).toEqual(
+      PRECIO_FESTIVO_CON_20_PORCIENTO__DE_DESCUENTO
+    );
   });
 
   it('deberia calcular precio con descuento cliente tipo 3 dia entre semana', () => {
     // Arrange - act
+    const PRECIO_ENTRE_SEMANA_CON_30_PORCIENTO__DE_DESCUENTO = 70;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo3ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionEntreSemana)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(70);
+    expect(examen.precioTotal).toEqual(
+      PRECIO_ENTRE_SEMANA_CON_30_PORCIENTO__DE_DESCUENTO
+    );
   });
 
   it('deberia calcular precio con descuento cliente tipo 3 dia fin de semana', () => {
     // Arrange - act
+    const PRECIO_FIN_DE_SEMANA_CON_30_PORCIENTO__DE_DESCUENTO = 140;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo3ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionFinDeSemana)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(140);
+    expect(examen.precioTotal).toEqual(
+      PRECIO_FIN_DE_SEMANA_CON_30_PORCIENTO__DE_DESCUENTO
+    );
   });
 
   it('deberia calcular precio con descuento cliente tipo 3 festivo', () => {
     // Arrange - act
+    const PRECIO_FESTIVO_CON_30_PORCIENTO__DE_DESCUENTO = 210;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo3ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionFestivo)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(210);
+    expect(examen.precioTotal).toEqual(
+      PRECIO_FESTIVO_CON_30_PORCIENTO__DE_DESCUENTO
+    );
   });
 
   it('deberia calcular precio con descuento cliente tipo 4 dia entre semana', () => {
     // Arrange - act
+    const PRECIO_ENTRE_SEMANA_SIN_DESCUENTO = 100;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo4ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionEntreSemana)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(100);
+    expect(examen.precioTotal).toEqual(PRECIO_ENTRE_SEMANA_SIN_DESCUENTO);
   });
 
   it('deberia calcular precio con descuento cliente tipo 4 dia fin de semana', () => {
     // Arrange - act
+    const PRECIO_FIN_DE_SEMANA_SIN_DESCUENTO = 200;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo4ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionFinDeSemana)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(200);
+    expect(examen.precioTotal).toEqual(PRECIO_FIN_DE_SEMANA_SIN_DESCUENTO);
   });
 
   it('deberia calcular precio con descuento cliente tipo 4 festivo', () => {
     // Arrange - act
+    const PRECIO_FESTIVO_SIN_DESCUENTO = 300;
     const examen: Examen =
       examenTestDataBuilderConClienteTipo4ConCertificacionPrecio100
         .conFechaPresentacion(fechaPresentacionFestivo)
         .build();
     // assert
-    expect(examen.precioTotal).toEqual(300);
+    expect(examen.precioTotal).toEqual(PRECIO_FESTIVO_SIN_DESCUENTO);
   });
 });
